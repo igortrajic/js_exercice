@@ -14,6 +14,10 @@
  */
 export function isBiggerThan2(n) {
   // Write your code here
+  if (typeof n !== 'number' || Number.isNaN(n)) {
+    throw new Error('Unsupported type')
+  }
+  return n > 2
 }
 
 /**
