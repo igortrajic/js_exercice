@@ -1,3 +1,5 @@
+import { type } from "os";
+
 /**
  * @param {number} diameter
  * @return {number} sphere volume
@@ -25,7 +27,15 @@ export function roundNumberToOneDecimals(n) {
  * @return {number} average with full precision
  */
 export function computeAverage(grades) {
-  // Write your code here
+
+ for (const value of grades) {
+  if (!Array.isArray(grades) || typeof value !== "number" || Number.isNaN(value)){
+    throw new TypeError('Unsupported type');
+  } 
+}
+  const sum = grades.reduce((acc, val) => acc + val, 0);
+  const average = sum / grades.length
+  return average
 }
 
 /**
