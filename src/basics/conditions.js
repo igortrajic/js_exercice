@@ -8,13 +8,16 @@
  *   can lead to unexpected behaviors
  */
 
+import { type } from "os"
+import { threadCpuUsage } from "process"
+
 /**
  * @param {number} n
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
   // Write your code here
-  if (typeof n !== 'number' || Number.isNaN(n)) {
+  if (typeof n !== 'number' || Number.isNaN(n) ) {
     throw new Error('Unsupported type')
   }
   return n > 2
@@ -27,4 +30,9 @@ export function isBiggerThan2(n) {
  */
 export function isMult(n, m) {
   // Write your code here
+  if (typeof n !== "number" || Number.isNaN(n) || typeof m !== "number" ||  Number.isNaN(m)) {
+    throw new Error('Unsupported type')
+  }
+ return n % m === 0
+  
 }
