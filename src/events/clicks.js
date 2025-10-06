@@ -17,5 +17,12 @@ export function reactToClickEvent() {
  * But this time you should add a new div below the button with the content "clicked"
  */
 export function addEventToDomOnClick() {
-  // Write your code here
+  const button = document.getElementById("click-me")
+  if (button){
+  button.addEventListener("click",() => {
+  const newDiv = document.createElement("div")
+  newDiv.textContent = "clicked"
+  button.insertAdjacentElement("afterend", newDiv)
+})
+}
 }
