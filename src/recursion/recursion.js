@@ -6,7 +6,13 @@
  * @return {number} The factorial of n
  */
 export function factorial(n) {
-  // Write your code here
+  if (typeof n !== "number" || Number.isNaN(n) || n < 0 || !Number.isInteger(n)){
+    throw new Error("Unsupported type")
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
 }
 
 /**
