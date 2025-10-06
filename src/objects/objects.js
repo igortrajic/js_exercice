@@ -10,7 +10,10 @@
  * The values of the properties should be "Toto", "Tutu"
  */
 export function crateUserObject() {
-  // Write your code here
+  return {
+    first_name: "Toto",
+    last_name: "Tutu"
+  };
 }
 
 /**
