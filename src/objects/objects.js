@@ -33,8 +33,13 @@ export function accessPropertiesInObjects(object) {
  * and all original object values mapped to lower case
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
-  // Write your code here
+  
+  return  {
+    keys: Object.keys(object).map(key => key.toUpperCase()),
+    values: Object.values(object).map(value => value.toLowerCase())
+  }
 }
+
 
 /**
  * Return the name of the first younger and last older user in the array
