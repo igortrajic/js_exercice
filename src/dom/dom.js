@@ -8,15 +8,18 @@
  * You need to change the color of the html element with the id "change-my-color"
  */
 export function getElementFromDomAndChangeColorToRed() {
-  // Write your code here
-}
+  const color = document.getElementById("change-my-color");
+  if (color) {
+    color.style.color = "red";
+  }
+} 
 
 /**
  * You need to add two paragraph in the div with id "add-your-elements-in-this-element"
  * The first paragraph must contain "Bonjour", the second "Toto"
  */
 export function addElementsInDOM() {
-  // Write your code here
+  
 }
 
 /**
@@ -26,5 +29,5 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
-  // Write your code here
+
 }
