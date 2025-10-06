@@ -20,8 +20,27 @@ export function displayInputContentInAlertOnEnterKey() {
  * the text should be added to a list of elements with id "list".
  */
 export function addElementsInListOnEnterKey() {
-  // Write your code here
+  const input = document.getElementById("list-input")
+  const list = document.getElementById("list")
+  if (input && list){
+    function addItem() {
+      if (input.value !== "") {
+      const newLi = document.createElement("li")
+      newLi.textContent = input.value
+      list.appendChild(newLi)
+       input.value = ""
+      }
+    }
+    input.addEventListener("keydown",(event) => {
+    if (event.key === "Enter") {
+    addItem()
+  }})
+    input.addEventListener("blur",() => {
+    addItem()
+   })
+ }
 }
+
 
 /**
  * Add functionalities to the list. Now, when you click on one of the li, the element should be removed.
