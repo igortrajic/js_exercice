@@ -19,7 +19,10 @@ export function getElementFromDomAndChangeColorToRed() {
  * The first paragraph must contain "Bonjour", the second "Toto"
  */
 export function addElementsInDOM() {
-  
+  const div = document.getElementById("add-your-elements-in-this-element")
+  if (div){
+    div.innerHTML= '<p>"Bonjour"</p><p>"Toto"</p>'
+  }
 }
 
 /**
