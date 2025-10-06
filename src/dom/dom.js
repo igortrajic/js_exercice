@@ -32,5 +32,9 @@ export function addElementsInDOM() {
  * @param {array<{name: string, color: string}>} listElements
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
+  const elements = document.getElementById("add-list-here")
+  if (elements){
+    elements.innerHTML = listElements.map(item => `<div style="background-color: ${item.color}">${item.name}</div>`)
+  }
 
 }
