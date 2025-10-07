@@ -4,9 +4,13 @@
  * You need to display coordinates as follows : "x: 232, y: 332
  */
 export function mouseMovements() {
-  // Write your code here
-}
-
+  const cordinations = document.getElementById("mouse-coordinates");
+    document.addEventListener('mousemove', (event) => {
+            const x = event.clientX;
+      const y = event.clientY;
+      cordinations.textContent = `x: ${x}, y: ${y}`
+    } );
+    }
 const randomRGB = () => {
   const o = Math.round
   const r = Math.random
