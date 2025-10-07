@@ -29,7 +29,31 @@ let enteringColor = ''
  * Third, when you loose focus of the field, you need to reset the border color to the default one.
  */
 export function hoverFocusAndBlur() {
-  // Write your code here
+  const input = document.getElementById('focus-me');
+  const labels = document.querySelectorAll('label[for="focus-me"]');
+   const originalBorderColor = window.getComputedStyle(input).borderColor;
+
+  const originalText1 = labels[0].textContent;
+  const originalText2 = labels[1].textContent;
+
+  input.addEventListener('mouseover', () => {
+    labels[0].textContent = 'Yes, you hover me !';
+    labels[1].textContent = 'Yes, you hover me !';
+  });
+
+  input.addEventListener('mouseleave', () => {
+    labels[0].textContent = originalText1;
+    labels[1].textContent = originalText2;
+  });
+
+  input.addEventListener('focus', () => {
+    const enteringColor = randomRGB();
+    input.style.borderColor = enteringColor;
+  });
+
+  input.addEventListener('blur', () => {
+    input.style.borderColor = originalBorderColor;
+  });
 }
 
 /**
